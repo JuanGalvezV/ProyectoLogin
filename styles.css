@@ -1,0 +1,10 @@
+*{
+    font-family: sans-serif;
+}
+
+html{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aquamarine;
+}

@@ -1,0 +1,26 @@
+<form class="border border-dark rounded-3 m-0" [formGroup]="formLogin" (ngSubmit)="checkUser">
+    <div class="form p-3">
+        <div class="form-body">
+            <p>Ingresa Sesión</p>
+            <label for="user" class="form-label mt-2">
+                Usuario
+            </label>
+            <input id="user" name="user" type="text" class="form-control" placeholder="Ingrese nombre de usuario" formControlName="user">
+            <div class="alert alert-danger mt-2" [hidden]="user.valid || user.pristine">
+                El nombre de usuario es obligatorio.
+            </div>
+
+            <label for="password" class="form-label mt-2">
+                Contraseña
+            </label>
+            <input id="password" type="password" class="form-control" placeholder="Ingrese contraseña" formControlName="password">
+            <div class="alert alert-danger mt-2" [hidden]="password.valid || password.pristine">
+                La contraseña es obligatoria.
+            </div>
+
+            <button name="button-inicio-sesion" class="btn btn-success mt-2" [disabled]="!user.valid && !password.valid">
+                <a href="/detalle" class="text-light text-decoration-none">Iniciar Sesion</a>
+            </button>
+        </div>
+    </div>
+</form>
